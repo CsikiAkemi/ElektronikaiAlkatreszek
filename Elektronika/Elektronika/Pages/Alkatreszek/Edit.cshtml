@@ -1,0 +1,50 @@
+﻿@page
+@model Elektronika.Pages.Alkatreszek.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Alkatresz</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Alkatresz.Id" />
+            <div class="form-group">
+                <label asp-for="Alkatresz.Megnevezes" class="control-label"></label>
+                <input asp-for="Alkatresz.Megnevezes" class="form-control" />
+                <span asp-validation-for="Alkatresz.Megnevezes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Alkatresz.Gyarto" class="control-label"></label>
+                <input asp-for="Alkatresz.Gyarto" class="form-control" />
+                <span asp-validation-for="Alkatresz.Gyarto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Alkatresz.Tipus" class="control-label"></label>
+                <input asp-for="Alkatresz.Tipus" class="form-control" />
+                <span asp-validation-for="Alkatresz.Tipus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Alkatresz.Beszar" class="control-label"></label>
+                <input asp-for="Alkatresz.Beszar" class="form-control" />
+                <span asp-validation-for="Alkatresz.Beszar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
